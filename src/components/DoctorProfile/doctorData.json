@@ -1,0 +1,75 @@
+[
+    {
+        "name": "Dr. Vikash Kumar",
+        "specialty": "Surgery",
+        "location": "Khirhar, Madubani Bihar",
+        "aboutMe": "Dr. Vikash Kumar excels in surgical care, providing precise treatments with compassion in Khirhar, Madubani Bihar.",
+        "rating": 4,
+        "profilePic": "../../../public/images/vikas.jpg",
+        "socialLinks": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    },
+    {
+        "name": "Dr. Abhinav Mishra",
+        "specialty": "Radiology",
+        "location": "Darbhanga, Bihar",
+        "aboutMe": "Dr. Abhinav Mishra specializes in radiology, providing accurate diagnostic imaging services in Darbhanga, Bihar.",
+        "rating": 4.5,
+        "profilePic": "../../../public/images/abhinav.jpg",
+        "socialLinks": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    }, 
+    {
+        "name": "Dr. Manvi Bhardwaj",
+        "specialty": "Pathology",
+        "location": "Patna, Bihar",
+        "aboutMe": "Dr. Manvi Bhardwaj specializes in pathology, providing comprehensive diagnostic services in Patna, Bihar.",
+        "rating": 4,
+        "profilePic": "https://example.com/images/neelam.jpg",
+        "socialLinks": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    },    
+   
+    {
+        "name": "Dr. Priya Patel",
+        "specialty": "Pediatrics",
+        "location": "Darbhanga, Bihar",
+        "aboutMe": "Dr. Priya Patel focuses on pediatric care, ensuring the well-being of children in Darbhanga, Bihar.",
+        "rating": 4.2,
+        "profilePic": "https://example.com/images/priya.jpg",
+        "socialLinks": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    },
+    {
+        "name": "Dr. Amit Anand",
+        "specialty": "General Medicine",
+        "location": "Delhi, India",
+        "aboutMe": "Dr. Amit Anand specializes in general medicine, providing comprehensive healthcare services in Delhi, India.",
+        "rating": 4.8,
+        "profilePic": "https://example.com/images/amit.jpg",
+        "socialLinks": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    },
+    {
+        "name": "Dr. Amit Anand",
+        "specialty": "General Medicine",
+        "location": "Delhi, India",
+        "aboutMe": "Dr. Amit Anand specializes in general medicine, providing comprehensive healthcare services in Delhi, India.",
+        "rating": 4.8,
+        "profilePic": "https://example.com/images/amit.jpg",
+        "socialLinks": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/"
+        }
+    }
+]

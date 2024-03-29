@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Doctor 1",
+    "image": "../../public/images/vikas.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Doctor 2",
+    "image": "https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Doctor 3",
+    "image": "https://cdn.pixabay.com/photo/2016/11/14/03/05/surgery-1822458_640.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Doctor 4",
+    "image": "https://w0.peakpx.com/wallpaper/855/812/HD-wallpaper-health-doctor-hospital-healthtips-doctor-health.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Doctor 5",
+    "image": "https://w0.peakpx.com/wallpaper/315/432/HD-wallpaper-medical-hospital-thumbnail.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Doctor 6",
+    "image": "https://thumbs.dreamstime.com/b/doctors-hospital-corridor-nurse-pushing-gurney-stretcher-bed-male-senior-female-patient-32154012.jpg"
+  }
+]
+
+
