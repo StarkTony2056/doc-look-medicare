@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 function InfoPage() {
     return (
         <Router>
-            <div className="mt-2 mt-md-5">
+            <div className="mt-2 mt-md-5 md: px-2 lg:-mt-2">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 d-flex align-items-stretch mb-4 mb-lg-0">

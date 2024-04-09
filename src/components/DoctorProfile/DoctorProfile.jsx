@@ -10,7 +10,7 @@ function DoctorProfile({ doctor }) {
   const { name, specialty, location, aboutMe, rating, profilePic, socialLinks } = doctor;
 
   return (
-    <div className="left-5 card shadow-md mb-10 mt-2 relative w-80 h-96 rounded-2xl p-1">
+    <div className="left-5 md:left-11 card shadow-md mb-10 mt-2 relative w-80 h-96 rounded-2xl p-1">
       <div className="absolute top-4 right-8 flex gap-2">
         <button className="mail">
           <AiOutlineMail className="text-red-700 text-xl" /> 
@@ -22,7 +22,7 @@ function DoctorProfile({ doctor }) {
       <div className="profile-pic">
         <img src={profilePic} alt="Profile" className="object-cover w-full h-full transform hover:scale-250 hover:object-left transition-all duration-500 ease-in-out" />
       </div>
-      <div className="bottom">
+      <div className="bottom bg-blue-50">
         <Rating rating={rating} />
         <div className="content absolute bottom-20 left-6 right-6 h-40">
           <h2 className="name text-lg font-semibold text-blue-600">

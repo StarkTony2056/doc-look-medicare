@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Generalist",
+        "image": "../../../public/images/speciality-General physician.svg"
+    },
+    {
+        "name": "Cardiology",
+        "image": "../../../public/images/cardiology.png"
+    },
+    {
+        "name": "Eye",
+        "image": "../../../public/images/Eye.jpg"
+    },
+    {
+        "name": "Dental",
+        "image": "../../../public/images/Dental.png"
+    },
+    {
+        "name": "Dermatologist",
+        "image": "../../../public/images/speciality-dermatologist.svg"
+    },
+    {
+        "name": "Surgon",
+        "image": "../../../public/images/Surgon.jpg"
+    },
+    {
+        "name": "Gynecologist",
+        "image": "../../../public/images/speciality-gynaecologist.svg"
+    },
+    {
+        "name": "Neurology",
+        "image": "../../../public/images/Neurologist.png"
+    },
+    {
+        "name": "Otology",
+        "image": "../../../public/images/otology.jpg"
+    },
+    {
+        "name": "Orthopedics",
+        "image": "../../../public/images/orthopedics.png"
+    },
+    {
+        "name": "Pediatrics",
+        "image": "../../../public/images/speciality-pediatric.svg"
+    },
+   
+    {
+        "name": "Radiology",
+        "image": "../../../public/images/radiology.png"
+    },
+    {
+        "name": "Urology",
+        "image": "../../../public/images/urologist.png"
+    },
+    {
+        "name":"Stomach",
+        "image": "../../../public/images/speciality-stomach.svg"
+    }
+]

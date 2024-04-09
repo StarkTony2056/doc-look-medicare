@@ -7,16 +7,22 @@ import Hero from "./components/Hero/Hero";
 import CategorySearch from './components/CategorySearch/CategorySearch';
 import Infopage from './components/InfoPage/Infopage';
 import DisplayDoctorList from './components/DoctorProfile/DisplayDoctorList';
+import Footer from './components/Footer/Footer';
+import Service from './components/Service/Service';
+import AnimatedCounter from './components/AnimatedCounter/AnimatedCounter';
 
 
 function App() {
   return (
-    <div className='md:px-2'>
+    <div>
       <Header/>
       <Hero/>
       <Infopage/>
       <CategorySearch/>
       <DisplayDoctorList/>
+      <AnimatedCounter/>
+      <Service/>
+      <Footer/>
     </div>
   );
 }
