@@ -9,9 +9,14 @@ function DisplayDoctorList() {
   ));
 
   return (
-    <div className="px-1 flex justify-center items-center h-screen mb-15 mt-0">
-      <SwiperComponent data={doctorProfiles} effect="" />
-    </div>  
+    <div className='mb-4 mt-4 items-center gap-1'>
+      <h2 className='font-bold text-4xl tracking-wide text-center mb-5'>
+        Popular <span className='text-primary'>Doctor</span>
+      </h2>
+      <div className="-mt-1">
+        <SwiperComponent data={doctorProfiles} effect="" />
+      </div>  
+    </div>
   );
 }
 

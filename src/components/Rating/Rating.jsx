@@ -1,82 +1,54 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import React, { useState } from 'react';
 
-export default function SwiperComponent({ data, effect }) {
-  if (!data || data.length === 0) {
-    return null; 
-  }
+const Rating = ({ initialRating }) => {
+  // State for rating and hover state
+  const [rating, setRating] = useState(initialRating);
+  const [hoverRating, setHoverRating] = useState(null);
 
-  const [swiper, setSwiper] = React.useState(null);
-  const [slidesPerView, setSlidesPerView] = React.useState(3); // Default value
-  const [spaceBetween, setSpaceBetween] = React.useState(30); // Default value
+  // Function to handle mouse enter event
+  const handleMouseEnter = (index) => {
+    if (hoverRating === null) {
+      setHoverRating(index);
+    }
+  };
 
-  React.useEffect(() => {
-    const resizeHandler = () => {
-      // Adjust slidesPerView and spaceBetween based on screen width
-      const screenWidth = window.innerWidth;
-      if (screenWidth >= 1024) {
-        setSlidesPerView(3);
-        setSpaceBetween(30);
-      } else if (screenWidth >= 768) {
-        setSlidesPerView(2);
-        setSpaceBetween(20);
-      } else {
-        setSlidesPerView(1);
-        setSpaceBetween(10);
-      }
-    };
+  // Function to handle mouse leave event
+  const handleMouseLeave = () => {
+    if (hoverRating !== null) {
+      setHoverRating(null);
+    }
+  };
 
-    // Initial call
-    resizeHandler();
+  // Function to handle click event
+  const handleClick = (index) => {
+    setRating(index);
+  };
 
-    // Add event listener for window resize
-    window.addEventListener('resize', resizeHandler);
-
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener('resize', resizeHandler);
-    };
-  }, []);
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      if (swiper) {
-        const currentIndex = swiper.activeIndex;
-        const slidesCount = swiper.slides.length;
-        const nextIndex = (currentIndex + 1) % slidesCount;
-        swiper.slideTo(nextIndex);
-      }
-    }, 5000); // Set auto slide time here (5000 milliseconds)
-
-    return () => clearInterval(interval);
-  }, [swiper]);
+  // Function to handle touch event
+  const handleTouchStart = (index, event) => {
+    event.preventDefault(); // Prevent default touch behavior
+    handleClick(index); // Call handleClick to update the rating
+  };
 
   return (
-    <Swiper
-      effect={effect}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={slidesPerView}
-      spaceBetween={spaceBetween}
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
-      }}
-      pagination={true}
-      modules={[EffectCoverflow, Pagination]}
-      className="mySwiper"
-      onSwiper={setSwiper}
-    >
-      {data.map((component, index) => (
-        <SwiperSlide key={index}>{component}</SwiperSlide>
+    <div className='absolute top-4 right-8 flex gap-1'>
+      {[1, 2, 3, 4, 5].map((index) => (
+        <span
+          key={index}
+          className="text-1xl cursor-pointer"
+          style={{
+            color: (hoverRating || rating) >= index ? 'yellow' : 'gray',
+          }}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleClick(index)}
+          onTouchStart={(event) => handleTouchStart(index, event)}
+        >
+          {index <= rating ? '★' : '☆'}
+        </span>
       ))}
-    </Swiper>
+    </div>
   );
-}
+};
+
+export default Rating;

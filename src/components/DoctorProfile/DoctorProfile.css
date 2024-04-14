@@ -33,7 +33,7 @@
   left: 10px;
   border-radius: 50%;
   z-index: 3;
-  border: 7px solid #68c2ec;
+  border: 3px solid #b6ddef;
   box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
   transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
 }

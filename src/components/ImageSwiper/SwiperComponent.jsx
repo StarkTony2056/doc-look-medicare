@@ -11,24 +11,13 @@ export default function SwiperComponent({ data, effect }) {
   }
 
   const [swiper, setSwiper] = React.useState(null);
-  const [slidesPerView, setSlidesPerView] = React.useState(3); 
-  const [spaceBetween, setSpaceBetween] = React.useState(30); 
+  const [autoplayPaused, setAutoplayPaused] = React.useState(false);
+  const [slidesPerView, setSlidesPerView] = React.useState(getSlidesPerView());
 
   React.useEffect(() => {
-    const resizeHandler = () => {
- 
-      const screenWidth = window.innerWidth;
-      if (screenWidth >= 1024) {
-        setSlidesPerView(3);
-        setSpaceBetween(30);
-      } else if (screenWidth >= 768) {
-        setSlidesPerView(2);
-        setSpaceBetween(20);
-      } else {
-        setSlidesPerView(1);
-        setSpaceBetween(10);
-      }
-    };
+    function resizeHandler() {
+      setSlidesPerView(getSlidesPerView());
+    }
 
     resizeHandler();
 
@@ -39,26 +28,42 @@ export default function SwiperComponent({ data, effect }) {
     };
   }, []);
 
+  function getSlidesPerView() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1024) {
+      return 3;
+    } else if (screenWidth >= 768) {
+      return 2;
+    } else {
+      return 1;
+    }
+  }
+
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if (swiper) {
-        const currentIndex = swiper.activeIndex;
-        const slidesCount = swiper.slides.length;
-        const nextIndex = (currentIndex + 1) % slidesCount;
-        swiper.slideTo(nextIndex);
+      if (swiper && !autoplayPaused) {
+        swiper.slideNext();
       }
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [swiper]);
+  }, [swiper, autoplayPaused]);
+
+  const handleTouchStart = () => {
+    setAutoplayPaused(true);
+  };
+
+  const handleTouchEnd = () => {
+    setAutoplayPaused(false);
+  };
 
   return (
     <Swiper
       effect={effect}
       grabCursor={true}
-      centeredSlides={true}
+      centeredSlides={false}
       slidesPerView={slidesPerView}
-      spaceBetween={spaceBetween}
+      spaceBetween={30} 
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -66,10 +71,15 @@ export default function SwiperComponent({ data, effect }) {
         modifier: 1,
         slideShadows: false,
       }}
-      pagination={true}
+      pagination={{
+        clickable: true, 
+      }}
+      loop={true}
       modules={[EffectCoverflow, Pagination]}
       className="mySwiper"
       onSwiper={setSwiper}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {data.map((component, index) => (
         <SwiperSlide key={index}>{component}</SwiperSlide>
